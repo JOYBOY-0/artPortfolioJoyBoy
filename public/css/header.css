@@ -1,0 +1,112 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  #main_header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 5rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #header_logo{
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      align-self: center;
+  }
+
+  #header_menu{
+      font-size: 2rem;
+      align-self: flex-end;
+      margin: 1rem;
+
+  }
+
+  #header_nav{
+      display: none;
+  }
+
+  #header_nav_links{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  #header_link{
+      margin: 1rem;
+      list-style: none;
+  }
+
+  #header_link a{
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5rem;
+    font-weight: 420;   
+    display: block;
+    position: relative; 
+    padding: 0.2em 0;
+    overflow: hidden;
+  }
+  
+  #header_link a::after {
+    opacity: 1;
+    transform: translate3d(-100%, 0, 0);
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  #header_link a:hover::after,
+  #header_link a:focus::after{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+  
+
+  #header_nocturneMode{
+      display: none;
+      position: relative;
+      justify-self: flex-end;
+      right: 0;
+      font-size: 1.8rem;
+  }
+
+  @media (min-width: 780px){
+
+    #main_header{
+        flex-direction: row;
+        align-content: center;
+        justify-content: flex-end;
+    }
+    #header_menu{
+        display: none;
+    }
+    #header_nav{
+        display: flex;
+    }
+    #header_logo{
+        left: 0;
+        margin-left: 2rem;
+        background-color: white;
+    }
+    #header_nocturneMode{
+        display: flex;
+        justify-self: flex-end;
+        margin: 0 2rem 0 5rem;
+    }
+  }
